@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Book Purchase Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: left;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .input-field, .textarea-field, .select-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .radio-group label, .checkbox-group label {
+            font-size: 14px;
+        }
+
+        .radio-group, .checkbox-group {
+            margin: 10px 0;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>User Book Purchase Details</h2>
+        <form action="/submit-book-form" method="POST">
+            <!-- Name Field -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="input-field" placeholder="Enter your name" required><br>
+
+            <!-- Address Field -->
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" class="textarea-field" placeholder="Enter your address" required></textarea><br>
+
+            <!-- Subject of Book Radio Buttons -->
+            <label>Choose Subject of Book:</label><br>
+            <div class="radio-group">
+                <label><input type="radio" name="subject" value="fiction"> Fiction</label><br>
+                <label><input type="radio" name="subject" value="non-fiction"> Non-fiction</label><br>
+                <label><input type="radio" name="subject" value="science"> Science</label><br>
+                <label><input type="radio" name="subject" value="history"> History</label><br>
+            </div>
+
+            <!-- Favorite Author Dropdown -->
+            <label for="author">Favorite Author:</label>
+            <select id="author" name="author" class="select-field" required>
+                <option value="j_k_rowling">J.K. Rowling</option>
+                <option value="george_orwell">George Orwell</option>
+                <option value="j_r_r_tolkien">J.R.R. Tolkien</option>
+                <option value="agatha_christie">Agatha Christie</option>
+                <option value="isaac_asimov">Isaac Asimov</option>
+            </select><br>
+
+            <!-- Comments on Last Book Read -->
+            <label for="comments">Comments on Last Book Read:</label>
+            <textarea id="comments" name="comments" class="textarea-field" placeholder="Share your thoughts on the last book you read" required></textarea><br>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
